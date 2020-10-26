@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
+<div id="speechContainer">
+    <h1>Upload New File</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file"/>
+        <br>
+        <br>
+        <input type="submit" value="Transcribe"/>
+    </form>
+    {% if transcript|length > 1 %}
+    <div id="transcriptContainer">
+        <h1>Transcript:</h1>
+        <p>{{transcript}}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
